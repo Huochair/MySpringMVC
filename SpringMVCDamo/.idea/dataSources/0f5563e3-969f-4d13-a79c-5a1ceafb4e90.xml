@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="springdemo@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="information_schema"/>
+    <schema id="3" parent="1" name="mysql"/>
+    <schema id="4" parent="1" name="springdemo">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="1" name="test"/>
+    <schema id="6" parent="1" name="wanliwork"/>
+    <table id="7" parent="4" name="blog"/>
+    <table id="8" parent="4" name="user"/>
+    <column id="9" parent="7" name="Id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="10" parent="7" name="title">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="11" parent="7" name="content">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="12" parent="7" name="user_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="13" parent="7" name="pub_date">
+      <Position>5</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00&apos;</DefaultExpression>
+    </column>
+    <key id="14" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="15" parent="7" name="user_id">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>springdemo</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="16" parent="8" name="Id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="8" name="nickname">
+      <Position>2</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="18" parent="8" name="password">
+      <Position>3</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="8" name="first_name">
+      <Position>4</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+    </column>
+    <column id="20" parent="8" name="last_name">
+      <Position>5</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+    </column>
+    <key id="21" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
